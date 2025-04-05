@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 97%;
+    --foreground: 270 14% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 14% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 14% 17%;
+    --primary: 270 14% 17%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 343 32% 53%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 343 32% 53%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 343 32% 53%;
+    --radius: 0.5rem;
+    --font-sans: var(--font-dm-sans);
+  }
+
+  .dark {
+    --background: 270 14% 17%;
+    --foreground: 0 0% 98%;
+    --card: 270 16% 22%;
+    --card-foreground: 0 0% 98%;
+    --popover: 270 16% 22%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 270 14% 17%;
+    --secondary: 343 32% 53%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 270 10% 30%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 343 32% 53%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 10% 30%;
+    --input: 270 10% 30%;
+    --ring: 343 32% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom styles for templates */
+.resume-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  position: relative;
+}
+
+.resume-preview {
+  height: 1130px; /* A4 height */
+  width: 800px; /* A4 width */
+  overflow: hidden;
+}
+
+.template {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.editor-sidebar {
+  min-width: 300px;
+  max-width: 350px;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid hsl(var(--border));
+}
+
+.editor-content {
+  flex: 1;
+  overflow-y: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drag-handle {
+  cursor: grab;
+}
